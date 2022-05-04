@@ -11,10 +11,17 @@ const AddPost = ({title, onAdd}) => {
         !text ? console.log("No text.") : console.log(text);
 
         onAdd({usrName, text});
+        
+        setUsrName('');
+        setText('');
     };
 
     return (
-        <div className="AddPost">
+        <div className=
+            {title === "" ? 
+                "AddPost" : 
+                "AddPost " + title.replaceAll(" ", "-")
+            }>
             <h2>{title}</h2>
             <form onSubmit={pre_addPost}>
                 <div>
@@ -44,6 +51,15 @@ const AddPost = ({title, onAdd}) => {
 
 AddPost.defaultProps = {
     title: "",
+};
+
+export const createPost = (name, txt) => {
+    return {
+        id: 0,
+        usrName: name,
+        text: txt,
+        replies: [],
+    };
 };
 
 export default AddPost
