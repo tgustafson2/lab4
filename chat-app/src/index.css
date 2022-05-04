@@ -5,9 +5,72 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.Posts {
+  display: flex;
+  flex-direction: column;
+}
+
+.AddPost {
+  max-width: 1200px; 
+  box-shadow: 0px 0px 10px rgb(165, 165, 165);
+  border-radius: 5px;
+  margin-top: 2em;
+  padding: 1em;
+}
+
+.AddPost h2 {
+  margin: 0 0 .5em 0;
+  font-size: medium;
+  font-weight: bolder;
+  color:rgb(78, 77, 77);
+}
+
+.AddPost div input {
+  margin: 0;
+  width: 100%;
+}
+
+.Replies {
+  padding-left: 5%;
+  border-left: 3px solid lightgray;
+}
+
+.PostScore {
+  align-self: center;
+}
+
+.PostScore button{
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: darkgray;
+  margin: 0;
+}
+
+.PostScore p {
+  margin: 0;
+  text-align: center;
+}
+
+.PostContent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.PostText p {
+  margin-top: 0em;
+}
+
+.Post h5{
+  color: rgb(52, 147, 179);
+  margin: .5em 0 .5em 0;
 }

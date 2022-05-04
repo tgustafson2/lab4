@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import AddPost from "./components/AddPost";
+import Post from "./components/Post"
 
 function App() {
+  const post = [
+    {
+      usrName: "cameron",
+      text: "Hey guys I hope you like this assignment, it's pretty cool!",
+    },
+    {
+      usrName: "student",
+      text: "@cameron I don't think it's that cool, and you're wasting a lot of my time :/"
+    }
+  ];
+
+  const addPost = () => {
+    console.log("AddPost -> Here!");
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AddPost title='New Post' onAdd={addPost}/>
+      <div className="Posts">
+        <Post 
+          usrname={post[0].usrName} 
+          text={post[0].text}
+          postID={1} depth={1}/>
+        <Post 
+          usrname={post[1].usrName}
+          text={post[1].text}
+          postID={2} depth={1}/>
+      </div>
     </div>
   );
 }
