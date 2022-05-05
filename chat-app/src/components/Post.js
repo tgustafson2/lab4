@@ -2,6 +2,11 @@ import { useState } from 'react'
 import { createPost } from "./AddPost"
 import AddPost from "./AddPost"
 import PostScore from "./PostScore";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button'
+import $ from 'jquery';
+import Popper from 'popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 const Post = ({ post, depth }) => {
     const [isReplying, toggleReply] = useState(false);
@@ -27,7 +32,7 @@ const Post = ({ post, depth }) => {
         console.log(replies);
 
         const reply = createPost(post.usrName, post.text);
-        modReplies([reply, ...replies]);
+        modReplies([...replies, reply]);
     }
 
     return (
@@ -49,7 +54,7 @@ const Post = ({ post, depth }) => {
                     key={index}/>
                 )}
             </div>
-            {depth > 1 ? <button onClick={toggle}>Reply</button> : <></>}
+            {depth > 1 ? < Button variant="primary" onClick={toggle}>Reply</Button> : <></>}
             {isReplying ? <AddPost onAdd={p_addReply}/> : <></>}
         </div>
     );

@@ -2,6 +2,10 @@ import { useState } from 'react'
 import { createPost } from "./components/AddPost"
 import AddPost from "./components/AddPost";
 import Post from "./components/Post"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import $ from 'jquery';
+import Popper from 'popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 function App() {
   const [posts, modPosts] = useState([]); 
@@ -9,7 +13,7 @@ function App() {
 
   const addPost = ( p ) => {
     const np = createPost(p.usrName, p.text);
-    modPosts([np, ...posts]);
+    modPosts([...posts,np]);
   };
 
   return (
