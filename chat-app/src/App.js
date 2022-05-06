@@ -3,6 +3,7 @@ import { createPost } from "./components/AddPost"
 import AddPost from "./components/AddPost";
 import Post from "./components/Post"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import bootstrap from 'bootstrap';
 import $ from 'jquery';
 import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
